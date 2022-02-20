@@ -2,6 +2,6 @@
 <manifest>
   <project name="Xiaomi-renoir/device_xiaomi_renoir" path="device/xiaomi/renoir" remote="github" revision="11.0-v2" />
   <project name="AndroPlus/proprietary_vendor_renoir" path="vendor/xiaomi/renoir" remote="gitlab" revision="lineage-18.1" />
-  <project name="ArixElo/kernel_xiaomi_sm8350" path="kernel/xiaomi/sm8350" remote="github" revision="renoir" />
-  <project name="Surya-Labs/device_qcom_common" path="device/qcom/common" remote="github" revision="11" />
+  <!--<project name="ArixElo/kernel_xiaomi_sm8350" path="kernel/xiaomi/sm8350" remote="github" revision="renoir" />
+  <project name="Surya-Labs/device_qcom_common" path="device/qcom/common" remote="github" revision="11" />-->
 </manifest>
