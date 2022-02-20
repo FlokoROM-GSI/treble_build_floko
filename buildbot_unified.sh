@@ -35,14 +35,14 @@ then
 fi
 
 # Abort early on error
-#set -eE
-#trap '(\
-#echo;\
-#echo \!\!\! An error happened during script execution;\
-#echo \!\!\! Please check console output for bad sync,;\
-#echo \!\!\! failed patch application, etc.;\
-#echo\
-#)' ERR
+set -eE
+trap '(\
+echo;\
+echo \!\!\! An error happened during script execution;\
+echo \!\!\! Please check console output for bad sync,;\
+echo \!\!\! failed patch application, etc.;\
+echo\
+)' ERR
 
 START=`date +%s`
 BUILD_DATE="$(date +%Y%m%d)"
@@ -102,12 +102,12 @@ build_device() {
 
 build_treble() {
     case "${1}" in
-        ("32B") TARGET=lineage_treble_arm_bvN;;
-        ("A64B") TARGET=lineage_treble_a64_bvN;;
-        ("64B") TARGET=lineage_treble_arm64_bvN;;
+        ("32B") TARGET=treble_arm_bvN;;
+        ("A64B") TARGET=treble_a64_bvN;;
+        ("64B") TARGET=treble_arm64_bvN;;
         (*) echo "Invalid target - exiting"; exit 1;;
     esac
-    lunch ${TARGET}-userdebug
+    lunch lineage_${TARGET}-userdebug
     make installclean
     make -j$(nproc --all) systemimage
     make vndk-test-sepolicy
